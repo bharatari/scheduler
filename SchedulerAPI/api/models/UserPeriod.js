@@ -1,0 +1,23 @@
+module.exports={
+    tableName:'userPeriods',
+    attributes:{
+        userId: {
+            type:'string'
+        },
+        periodName:{
+            type:'string'
+        },
+        title:{
+            type:'string'
+        },
+        subtitle:{
+            type:'string'
+        },
+        weekId:{
+            type:'string'
+        },
+        dayId:{
+            type:'string'
+        },
+    }
+}

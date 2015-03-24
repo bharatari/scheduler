@@ -1,0 +1,12 @@
+{{#if display}}
+<div class="day-container">
+    <div class="day-title">
+        <p class="day-title-text">{{day.title}}</p>
+    </div>
+    <div class="day">
+        {{#each period in day.periods}}
+            {{day-period period=period}}
+        {{/each}}
+    </div>
+</div> 
+{{/if}}

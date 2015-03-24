@@ -1,0 +1,23 @@
+module.exports={
+    tableName:'days',
+    attributes:{
+        weekId:{
+            type:'string'
+        },
+        title:{
+            type:'string'
+        },
+        subtitle:{
+            type:'string'
+        },
+        day:{
+            type:'string'
+        },
+        abstract:{
+            type:'boolean'
+        },
+        date:{
+            type:'datetime'
+        }
+    }
+}

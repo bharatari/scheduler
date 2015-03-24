@@ -1,0 +1,14 @@
+module.exports={
+    tableName:'schedules',
+    attributes:{
+        startDate:{
+            type:'datetime'
+        },
+        endDate:{
+            type:'datetime'
+        },
+        weekId:{
+            type:'string'
+        }
+    }
+}

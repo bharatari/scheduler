@@ -1,0 +1,11 @@
+module.exports={
+    tableName:'weeks',
+    attributes:{
+        name:{
+            type:'string'
+        },
+        title:{
+            type:'string'
+        }
+    }
+}

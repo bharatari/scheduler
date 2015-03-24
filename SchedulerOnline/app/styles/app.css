@@ -1,0 +1,163 @@
+.navbar-default {
+    margin-bottom: 10px;
+    min-height: 0px;
+    height: 45px;
+}
+
+.navbar-container {
+    height: inherit;
+}
+
+.navbar-float {
+    float: right;
+}
+
+.navbar-brand {
+    padding: 11.5px 15px;
+    height: 45px;
+    font-size: 12px;
+    font-family: 'Open Sans';
+    font-weight: 600;
+    margin-left: 4px !important;
+}
+
+.day {
+    display: table-cell;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.period {
+    display: block;
+    max-width: 230px;
+    min-width: 105px;
+    position: relative;
+    border-bottom: solid 1px black;
+}
+
+.week-pivot {
+    margin-top: -9px;
+}
+
+.schedule-container {
+    font-family: 'Open Sans';
+    display: inline-flex;
+    margin-left: -4px;
+}
+
+.day-container {
+    float: left;
+    display: inline-grid;
+}
+
+.day-container-disabled {
+    color: #ddd;
+    transition: color 1s ease;
+}
+
+.day-container-disabled:hover {
+    color: black;
+}
+
+.start-time {
+    margin-top: 10px;
+    margin-bottom: -2px;
+    font-size: 12px;
+}
+
+.end-time {
+    position: absolute;
+    bottom: 2px;
+    font-size: 12px;
+}
+
+.day-title-text {
+    font-weight: 600;
+    margin-left: 5px;
+    text-transform: uppercase;
+}
+
+.win-pivot-headers {
+    margin-left: -300px;
+    margin-bottom: -40px;
+    margin-top: 20px;
+}
+
+.win-pivot-header {
+    font-weight: 100 !important;
+    font-size: 24px !important;
+    font-family: 'Open Sans';
+    text-transform: uppercase;
+}
+
+.win-pivot-viewport {
+    width: 100vw;
+    height: 85vh !important;
+    overflow-y: auto;
+}
+
+.event-title {
+    font-weight: 600;
+    font-size: 16px;
+    white-space: nowrap;
+}
+
+.empty-event {
+    color: #a0a0a0;
+}
+
+.empty-label {
+    font-size: 32px;
+}
+
+.nav-menu {
+    box-shadow:0 5px 30px -10px #000;
+}
+
+.nav-menu-content {
+    margin-left: 10px; 
+    margin-right: 10px;
+}
+
+.navbar-toggle {
+    display: block;
+    border-color: transparent !important;
+    float: right;
+    margin-top: 4px;
+}
+
+.navbar-toggle:hover , .navbar-toggle:focus {
+    background-color: transparent !important;
+}
+
+.icon-bar {
+    background-color: white !important;
+}
+
+.btn-sidemenu {
+    font-size: 14px;
+    letter-spacing: 3px;
+    background-color: white;
+    color: black;
+    font-family: 'Roboto';
+    font-weight: 500;
+    border-color: transparent;
+    margin-left: -12px;
+    margin-right: -10px;
+    width: 108%;
+    margin-top: 0px !important;
+    border-bottom-color: #e0e0e0;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    -webkit-transition: background-color 0.2s ease-in, color 0.2s ease-out;
+    -moz-transition: background-color 0.2s ease-in, color 0.2s ease-out;
+    -ms-transition: background-color 0.2s ease-in, color 0.2s ease-out;
+    -o-transition: background-color 0.2s ease-in, color 0.2s ease-out;
+    transition: background-color 0.2s ease-in, color 0.2s ease-out;
+}
+
+.btn-sidemenu:hover {
+    border-color: transparent;
+    background-color: #e2e2e2;
+    color: black;
+}

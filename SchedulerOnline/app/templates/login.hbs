@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default navbar-no-shadow" role="navigation">
+    <div class="container-fluid">
+        <div class="top-bar"></div>
+        <div class="navbar-header"></div>
+        <a class="navbar-brand" href="/">SCHEDULER</a>
+    </div>
+</nav>
+
+<div class="container">
+    <form class="login-form" {{action 'login' on='submit'}}>
+        <fieldset>
+            <h2 class="centered-text">Login to your Scheduler Account</h2>
+            {{#if loginError}}
+            <div class="alert alert-dismissable alert-danger">
+                <button class="close" type="button" {{action 'close'}}>×</button>
+                <strong>Oh snap!</strong> We didn't recognize your username and password. Please try again. Make sure you've verified your account.
+            </div>
+            {{/if}}
+            <div>
+                {{input class="form-control" value=username type="text" placeholder="Email"}}
+                {{input class="form-control" value=password type="password" placeholder="Password"}}
+            </div>
+            {{!--  
+            <a>I forgot my password</a><br>--}}
+            <ul class="quick-link-container">
+                <li><a class="quick-link" href="#" {{action 'signUp'}}>Sign Up</a></li>
+                <li><a class="quick-link" href="#" {{action 'forgotPassword'}}>Forgot Password</a></li>
+                <li><a class="quick-link" href="#" {{action 'resend'}}>Resend Verification Email</a></li>
+            </ul>
+            <button class="btn btn-default btn-float-fix" type="submit">LOGIN</button>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default navbar-no-shadow" role="navigation">
+    <div class="container-fluid">
+        <div class="top-bar"></div>
+        <div class="navbar-header"></div>
+        <a class="navbar-brand" href="/">SCHEDULER</a>
+    </div>
+</nav>
+
+<div class="container">
+    {{modal-dialog body=modalBody title=modalTitle displayModal=displayModal}}
+    <form class="login-form" {{action 'signUp' on='submit'}}>
+        <fieldset>
+            <h2 class="centered-text">Sign Up</h2>
+            {{#if error}}
+            <div class="alert alert-dismissable alert-danger">
+                <button class="close" type="button" {{action 'closeError'}}>×</button>
+                <strong>Oh snap!</strong> Check that your passwords match and that you've filled out all required fields. Remember that your password needs to be between 6 and 20 characters in length, inclusive.
+            </div>
+            {{/if}}
+            <div>
+                {{input class="form-control" value=email type="text" placeholder="Exeter Email Address"}}
+                <input id="password" class="form-control" {{bind-attr value=password}} type="password" placeholder="Password (Between 6 and 20 characters)" {{action "validatePassword" on="change"}}/>
+                <input id="confirmPassword" class="form-control" {{bind-attr value=confirmPassword}} type="password" placeholder="Confirm Password" {{action "validatePassword" on="change"}}/>
+            </div>
+            {{#unless buttonPressed}}
+            <button class="btn btn-default btn-float" type="submit">Sign Up</button>     
+            {{/unless}}
+        </fieldset>
+    </form>
+</div>
