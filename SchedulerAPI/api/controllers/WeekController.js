@@ -1,11 +1,11 @@
 module.exports = {
     getWeek: function(req, res) {
-        WeekService.getWeek(function(days) {
+        WeekService.getWeek(req.user.id, function(days) {
             res.json(days);
         });
     },
     getNextWeek: function(req, res) {
-        WeekService.getNextWeek(function(days) {
+        WeekService.getNextWeek(req.user.id, function(days) {
             res.json(days);
         });
     }

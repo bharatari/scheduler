@@ -19,5 +19,8 @@ module.exports={
         dayId:{
             type:'string'
         },
+        isSport:{
+            type:'boolean'
+        }
     }
 }

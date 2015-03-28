@@ -1,12 +1,7 @@
 <nav class="nav-menu navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
     <div class="nav-menu-content">
         <button class="btn btn-default btn-lg btn-block btn-sidemenu" {{action 'toggle'}}>CLOSE</button>
-        {{#if isAuthenticated}}
-            <button type="button" class="btn btn-default btn-lg btn-block btn-sidemenu" {{action 'settings'}}>SETTINGS</button>
-            <button type="button" class="btn btn-default btn-lg btn-block btn-sidemenu" {{action 'logout'}}>LOGOUT</button>
-        {{else}}
-            <button type="button" class="btn btn-default btn-lg btn-block btn-sidemenu" {{action 'login'}}>LOGIN</button>
-        {{/if}}
+        <button type="button" class="btn btn-default btn-lg btn-block btn-sidemenu" {{action 'logout'}}>LOGOUT</button>
         <button type="button" class="btn btn-default btn-lg btn-block btn-sidemenu" {{action 'about'}}>ABOUT</button>
     </div>
 </nav>

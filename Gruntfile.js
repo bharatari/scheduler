@@ -1,39 +1,39 @@
 module.exports = function(grunt) {
     grunt.initConfig({
-        clean: ["SwyftAPI/assets/SwyftOnline/"],
+        clean: ["SchedulerAPI/assets/SchedulerOnline/"],
         copy: {
             main: {
                 files: [ 
-                    {expand: true, cwd: 'SwyftOnline/dist/', src: ['**'], dest: 'SwyftAPI/assets/SwyftOnline/'},
+                    {expand: true, cwd: 'SchedulerOnline/dist/', src: ['**'], dest: 'SchedulerAPI/assets/SchedulerOnline/'},
                 ]
             }
         },
         replace: {
             index: {
-                src: ['SwyftAPI/assets/SwyftOnline/index.html'], 
-                dest: 'SwyftAPI/views/homepage.ejs', 
+                src: ['SchedulerAPI/assets/SchedulerOnline/index.html'], 
+                dest: 'SchedulerAPI/views/homepage.ejs', 
                 replacements: [{
                     from: 'href="assets/',                   
-                    to: 'href="/SwyftOnline/assets/'
+                    to: 'href="/SchedulerOnline/assets/'
                 }, {
                     from: 'src="assets/',                   
-                    to: 'src="/SwyftOnline/assets/'
+                    to: 'src="/SchedulerOnline/assets/'
                 }]
             },
             css: {
-                src: ['SwyftAPI/assets/SwyftOnline/assets/*.css'], 
+                src: ['SchedulerAPI/assets/SchedulerOnline/assets/*.css'], 
                 overwrite: true,
                 replacements: [{
                     from: "(/images/",                   
-                    to: "(/SwyftOnline/images/"
+                    to: "(/SchedulerOnline/images/"
                 }]
             },
             js: {
-                src: ['SwyftAPI/assets/SwyftOnline/assets/*.js'],
+                src: ['SchedulerAPI/assets/SchedulerOnline/assets/*.js'],
                 overwrite: true,
                 replacements: [{
                     from: '"images/',                   
-                    to: '"/SwyftOnline/images/'
+                    to: '"/SchedulerOnline/images/'
                 }]
             }
         }

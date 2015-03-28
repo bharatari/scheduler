@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
     actions: {
         login: function() {
             var self = this;
+            this.set('loading', true);
             if(!loginUtils.checkLocalStorage()) {
                 alert(loginUtils.localStorageAlert);
                 return;
@@ -19,13 +20,15 @@ export default Ember.Controller.extend({
             data: JSON.stringify(data), success: function(data, textStatus, jqXHR){
                 if(data.token) {
                     localStorage.setItem(loginUtils.localStorageKey, JSON.stringify(data));
-                    self.transitionToRoute('restaurants');
+                    self.transitionToRoute('index');
                 }
                 else {
                     self.set('loginError', true);
+                    self.set('loading', false);
                 }
             }, error: function(jqXHR){
                 self.set('loginError', true);
+                self.set('loading', false);
             }});
         },
         close: function() {

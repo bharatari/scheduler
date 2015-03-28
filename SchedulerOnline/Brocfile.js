@@ -2,7 +2,11 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
-var app = new EmberApp();
+var app = new EmberApp({
+    minifyCSS: {
+        enabled: false
+    }
+});
 
 app.import('bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css');
 app.import('bower_components/bootstrap/dist/js/bootstrap.min.js');

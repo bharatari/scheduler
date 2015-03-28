@@ -4,7 +4,7 @@ module.exports = {
     jwtTokenSecret: 'mskdg829fj2mw9sij2n3974n3maloj2js2dug52',
     authenticated: function(tokenId, cb) {
         if(tokenId) {
-            LoginToken.findOne({id: tokenId}).exec(function(err, token){
+            LoginToken.findOne({ id: tokenId }).exec(function(err, token) {
                 if(err) {
                     cb(false);
                 }
@@ -12,13 +12,13 @@ module.exports = {
                     cb(false);
                 }                
                 else {
-                    if(token.expires <= Date.now()){
+                    if(token.expires <= Date.now()) {
                         try {
-                            LoginToken.destroy({id:token.id}).exec(function(err){
+                            LoginToken.destroy({id:token.id}).exec(function(err) {
                                 cb(false);
                             });
                         }
-                        catch (err) {
+                        catch(err) {
                             cb(false);
                         }
                     }
@@ -36,7 +36,7 @@ module.exports = {
         if (token) {
             try {
                 var decoded = jwt.decode(token, this.jwtTokenSecret);
-                if(decoded.exp <= Date.now()){
+                if(decoded.exp <= Date.now()) {
                     cb(false);
                 }
                 else {
@@ -50,7 +50,7 @@ module.exports = {
                     });
                 }
             } 
-            catch (err) {
+            catch(err) {
                 cb(false);
             }
         } 

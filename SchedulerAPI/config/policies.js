@@ -18,7 +18,11 @@
 
 
 module.exports.policies = {
-
+    
+  AuthController:{ },
+  WeekController: {
+    "*": ['isAuthenticated'],
+  },
   /***************************************************************************
   *                                                                          *
   * Default policy for all controllers and actions (`true` allows public     *

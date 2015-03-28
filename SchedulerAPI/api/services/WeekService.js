@@ -28,12 +28,12 @@ module.exports = {
             cb(week);
         });
     },
-    getWeek: function(cb) {
+    getWeek: function(userId, cb) {
         var self = this;
         this.getSchedule(function(schedule) {
             self.getCurrentWeek(schedule, function(week) {
                 DayService.getDays(week, function(days) {
-                    PeriodService.getUserPeriods(function(userPeriods) {
+                    PeriodService.getUserPeriods(userId, function(userPeriods) {
                         self.loop(0, days, userPeriods, true, function(processedDays) {
                             cb(processedDays);
                         });
@@ -42,12 +42,12 @@ module.exports = {
             });
         });
     },
-    getNextWeek: function(cb) {
+    getNextWeek: function(userId, cb) {
         var self = this;
         this.getNextSchedule(function(schedule) {
             self.getCurrentWeek(schedule, function(week) {
                 DayService.getDays(week, function(days) {
-                    PeriodService.getUserPeriods(function(userPeriods) {
+                    PeriodService.getUserPeriods(userId, function(userPeriods) {
                         self.loop(0, days, userPeriods, false, function(processedDays) {
                             cb(processedDays);
                         });
@@ -58,7 +58,7 @@ module.exports = {
     },
     loop: function(i, days, userPeriods, currentWeek, callback) {
         var self = this;
-        if(i < days.length){
+        if(i < days.length) {
             function query(cb){
                 PeriodService.getPeriods(days[i], function(periods) {
                     PeriodService.bindPeriods(periods, userPeriods, function(daySchedule) {
@@ -74,7 +74,7 @@ module.exports = {
                 self.loop(i+1, days, userPeriods, currentWeek, callback);
             });
         }
-        else{
+        else {
             callback(days);
         }
     }

@@ -74,5 +74,14 @@ export default {
             return false;
         }
     },
+    getToken: function() {
+        return JSON.parse(localStorage.getItem(this.localStorageKey)).token.token;
+    },
+    getTokenId: function() {
+        return JSON.parse(localStorage.getItem(this.localStorageKey)).token.id;
+    },
+    getTokenObject: function() {
+        return JSON.parse(localStorage.getItem(this.localStorageKey)).token;
+    },
     localStorageAlert: "We're having trouble processing your request. You're either using Safari in Private Mode or an older, unsupported browser. Please disable Private Mode on Safari or use another compatible browser, in order to continue."
 }

@@ -4,8 +4,8 @@ module.exports = {
             cb(periods);
         });
     },
-    getUserPeriods: function(cb) {
-        UserPeriod.find().exec(function(err, periods) {
+    getUserPeriods: function(userId, cb) {
+        UserPeriod.find({ userId: userId }).exec(function(err, periods) {
             cb(periods);
         });
     },
@@ -19,7 +19,7 @@ module.exports = {
                     }
                 }
                 else {
-                    if(!this.containsPeriod(daySchedule, periods[i])){
+                    if(!this.containsPeriod(daySchedule, periods[i])) {
                        daySchedule.push(this.emptyPeriod(periods[i]));
                     }                    
                 }

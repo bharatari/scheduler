@@ -34,9 +34,11 @@ module.exports.routes = {
 
   '/': 'ViewController.index',
   '/app/*':'ViewController.index',
-  '/api/isAuthenticated': 'AuthController.isAuthenticated',
-  '/api/week': 'WeekController.getWeek',
-  '/api/nextWeek': 'WeekController.getNextWeek'
+  'post /api/login':'AuthController.login',
+  'post /api/logout':'AuthController.logout',
+  '/api/isAuthenticated':'AuthController.isAuthenticated',
+  '/api/week':'WeekController.getWeek',
+  '/api/nextWeek':'WeekController.getNextWeek'
 
   /***************************************************************************
   *                                                                          *

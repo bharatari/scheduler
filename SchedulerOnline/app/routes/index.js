@@ -1,12 +1,13 @@
 import Ember from "ember";
 import config from 'scheduler-online/config/environment';
-import SessionRouteMixin from 'scheduler-online/mixins/session-route';
+import loginUtils from 'scheduler-online/utils/login-utils';
+import AuthenticatedRouteMixin from 'scheduler-online/mixins/authenticated-route';
 
-export default Ember.Route.extend(SessionRouteMixin, {
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
     model: function() {
         return Ember.RSVP.hash({
-            week: Ember.$.getJSON(config.routeLocation + '/api/week'),
-            nextWeek: Ember.$.getJSON(config.routeLocation + "/api/nextWeek")
+            week: Ember.$.getJSON(config.routeLocation + '/api/week', {token: loginUtils.getToken(), tokenId: loginUtils.getTokenId()}),
+            nextWeek: Ember.$.getJSON(config.routeLocation + "/api/nextWeek", {token: loginUtils.getToken(), tokenId: loginUtils.getTokenId()})
         })
     },
     setupController: function(controller, model) {
