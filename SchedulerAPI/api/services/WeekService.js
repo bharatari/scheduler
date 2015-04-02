@@ -61,7 +61,7 @@ module.exports = {
         if(i < days.length) {
             function query(cb){
                 PeriodService.getPeriods(days[i], function(periods) {
-                    PeriodService.bindPeriods(periods, userPeriods, function(daySchedule) {
+                    PeriodService.bindPeriods(periods, userPeriods, days[i].day, function(daySchedule) {
                         days[i].periods = daySchedule;
                         if(currentWeek) {
                             days[i] = DayService.dayElapsed(days[i]);

@@ -9,13 +9,23 @@ module.exports = {
             cb(periods);
         });
     },
-    bindPeriods: function(periods, userPeriods, cb) {
+    bindPeriods: function(periods, userPeriods, dayName, cb) {
         var daySchedule = [];
         for(var i = 0; i < periods.length; i++) {
             for(var e = 0; e < userPeriods.length; e++) {
                 if(this.containsUserPeriod(periods[i], userPeriods)) {
                    if(periods[i].name === userPeriods[e].periodName) {
-                        daySchedule.push(this.bindPeriod(periods[i], userPeriods[e]));
+                        if(userPeriods[e].exceptOn) {
+                            if(!this.containsException(userPeriods[e].exceptOn, dayName)) {
+                                daySchedule.push(this.bindPeriod(periods[i], userPeriods[e]));
+                            }
+                            else {
+                                daySchedule.push(this.emptyPeriod(periods[i]));
+                            }
+                        }
+                        else {
+                            daySchedule.push(this.bindPeriod(periods[i], userPeriods[e]));
+                        }
                     }
                 }
                 else {
@@ -26,6 +36,14 @@ module.exports = {
             }
         }
         cb(this.sortDaySchedule(daySchedule));
+    },
+    containsException: function(exceptionArray, dayName) {
+        for(var i = 0; i < exceptionArray.length; i++) {
+            if(exceptionArray[i] === dayName) {
+                return true;
+            }
+        }   
+        return false;
     },
     containsUserPeriod: function(period, userPeriods) {
         for(var i = 0; i < userPeriods.length; i++) {

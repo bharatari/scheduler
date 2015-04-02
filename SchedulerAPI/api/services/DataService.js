@@ -62,15 +62,28 @@ module.exports = {
             name: array[0] + " " + array[1],
             periods: periods
         }    
+        if(result.name.indexOf('PEC') !== -1) {
+            result.exceptOn = [
+                'wednesday',
+                'saturday'
+            ];
+        }
         return result;
     },
     processUserPeriods: function(data, userId, cb) {
         UserPeriod.destroy({ userId: userId }).exec(function(err) {
             async.each(data, function(item, callback) {
                 async.each(item.periods, function(period, callback2) {
-                    UserPeriod.create({ title: item.name, periodName: period, userId: userId }).exec(function(err) {
-                        callback2();
-                    });
+                    if(item.exceptOn) {
+                        UserPeriod.create({ title: item.name, periodName: period, userId: userId, exceptOn: item.exceptOn }).exec(function(err) {
+                            callback2();
+                        });
+                    }
+                    else {
+                        UserPeriod.create({ title: item.name, periodName: period, userId: userId }).exec(function(err) {
+                            callback2();
+                        });
+                    }
                 }, function(err) {
                     callback();
                 });

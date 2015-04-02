@@ -13,14 +13,14 @@
             {{#if loginError}}
             <div class="alert alert-dismissable alert-danger">
                 <button class="close" type="button" {{action 'close'}}>×</button>
-                <strong>Oh snap!</strong> We didn't recognize your username and password. Please try again. If this error occurs repeatedly, it may be that LionLinks is down.
+                <strong>Oh snap!</strong> We didn't recognize your username and password. Be sure you entered your username and not your full Exeter email address. Please try again. If this error occurs repeatedly, it may be that LionLinks is down.
             </div>
             {{/if}}
             {{#if loading}}
-                <h3 class="centered-text">Loading. This might take a while.</h3>
+                <h3 class="centered-text">Loading. This might take a moment.</h3>
             {{else}}
                 <div>
-                    {{input class="form-control" value=username type="text" placeholder="Email"}}
+                    {{input class="form-control" value=username type="text" placeholder="Username"}}
                     {{input class="form-control" value=password type="password" placeholder="Password"}}
                 </div>
                 <button class="btn btn-standard btn-float" type="submit">LOGIN</button>
