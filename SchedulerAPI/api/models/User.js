@@ -8,6 +8,9 @@ module.exports={
             required:true,
             unique:true
         },
+        isAdmin:{
+            type:'boolean'
+        },
         data:{
             type:'array'
         }
