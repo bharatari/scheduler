@@ -5,7 +5,7 @@
   "dependencies": {
     "grunt": "^0.4.5"
   },
-  "author": "Swyft Web Services",
+  "author": "Bharat Arimilli",
   "devDependencies": {
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.8.0",
