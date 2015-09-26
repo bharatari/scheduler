@@ -1,7 +1,7 @@
 var jwt = require('jwt-simple');
 
 module.exports = {
-    jwtTokenSecret: 'mskdg829fj2mw9sij2n3974n3maloj2js2dug52',
+    jwtTokenSecret: sails.config.jwtSecret,
     authenticated: function(tokenId, cb) {
         if(tokenId) {
             LoginToken.findOne({ id: tokenId }).exec(function(err, token) {
