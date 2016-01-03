@@ -42,8 +42,8 @@
     "type": "git",
     "url": "git://github.com/anonymous node/sails user/SchedulerAPI.git"
   },
-  "author": "anonymous node/sails user",
-  "license": "",
+  "author": "Bharat Arimilli",
+  "license": "Copyright 2015 Bharat Arimilli",
   "devDependencies": {
     "zombie": "^3.1.1"
   }
