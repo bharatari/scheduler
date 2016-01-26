@@ -25,13 +25,13 @@ module.exports={
                 });
             }
         });
-        
+
         function process(data, user) {
             DataService.processUserPeriods(data, user.id, function() {
                 login(user);
             });
         }
-        
+
         function login(user) {
             var expires = moment().add(2, 'days').toDate();
             var authToken = jwt.encode({
@@ -39,7 +39,7 @@ module.exports={
                 exp: expires
             }, AuthService.jwtTokenSecret);
 
-            LoginToken.create({ token:authToken, expires: expires, userId: user.id }).exec(function(err, token){
+            LoginToken.create({ token: authToken, expires: expires, userId: user.id }).exec(function(err, token) {
                 if(err) {
                     return res.serverError(err);
                 }
@@ -49,7 +49,7 @@ module.exports={
                             token : token,
                             expires: expires,
                             user: user.toJSON()
-                        });                    
+                        });
                     }
                     else {
                         return res.serverError();
