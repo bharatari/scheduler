@@ -13,13 +13,13 @@ Scheduler uses a modular and extensible structure for storing schedule data. Thi
 
 The application was originally designed to have users enter their classes manually, however this was superceeded by mechanism using a scraping engine to scrape schedule data from student's accounts (with their consent, of course). Schedule data is scraped and then stored in a MongoDB database using Scheduler's schedule format.
 
-The application was also originally intended to have its own authentication system, somewhat based on the one I built for my Swyft Epsilon project. However, this was replaced by a mechanism using the same scraping engine developed for getting scheduling data, for authentication. 
+The application was also originally intended to have its own authentication system, somewhat based on the one I built for my Swyft Epsilon project. However, this was replaced by authentication using the same scraping engine developed for getting schedule data.
 
 # Future
 As of December 2015, due to changes made to Exeter's internal websites, the scraping engine in this application is no longer functional, making the current implementation of the application not functional. However, because the scraping engine was developed in a modular fashion, it can be removed and replaced with another mechanism for authentication and getting schedule data with little to no changes needed for the client.
 
 Though this web app was specifically designed for use at Phillips Exeter Academy, the modular and extensible structure of the app means that it can be extended and used in a variety of different ways.
 
-#License
+# License
 Copyright 2015 Bharat Arimilli.
 
